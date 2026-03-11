@@ -2,43 +2,54 @@
 
 import Link from "next/link";
 import { Logo3D } from "./Logo3D";
+import { LanguageToggle } from "./LanguageToggle";
+import { useLanguage } from "@/context/LanguageContext";
 import { ExternalLink, Twitter, Youtube, Instagram, MessageCircle } from "lucide-react";
 
-const footerLinks = {
-  company: [
-    { label: "About Us", href: "/about" },
-    { label: "Leadership Team", href: "/team" },
-    { label: "Success Stories", href: "/testimonials" },
-    { label: "Contact", href: "/contact" },
-  ],
-  products: [
-    { label: "Algo Academy", href: "/academy" },
-    { label: "Tools Marketplace", href: "/tools" },
-    { label: "AI Signals", href: "/signals" },
-    { label: "Trading Bots", href: "/bots" },
-  ],
-  resources: [
-    { label: "Market Analysis", href: "/analysis" },
-    { label: "Education Hub", href: "/education" },
-    { label: "Live Deals", href: "/deals" },
-    { label: "Downloads", href: "/resources" },
-  ],
-  support: [
-    { label: "Community", href: "/community" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "FAQ", href: "/contact" },
-    { label: "24/7 Support", href: "/contact" },
-  ],
-};
-
-const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: MessageCircle, href: "#", label: "Discord" },
-];
-
 export function Footer() {
+  const { t } = useLanguage();
+
+  const footerLinks = {
+    company: [
+      { label: t("footer.aboutUs"), href: "/about" },
+      { label: t("footer.leadershipTeam"), href: "/team" },
+      { label: t("footer.successStories"), href: "/testimonials" },
+      { label: t("footer.contact"), href: "/contact" },
+    ],
+    products: [
+      { label: t("footer.algoAcademy"), href: "/academy" },
+      { label: t("footer.toolsMarketplace"), href: "/tools" },
+      { label: t("footer.aiSignals"), href: "/signals" },
+      { label: t("footer.tradingBots"), href: "/bots" },
+    ],
+    resources: [
+      { label: t("footer.marketAnalysis"), href: "/analysis" },
+      { label: t("footer.educationHub"), href: "/education" },
+      { label: t("footer.liveDeals"), href: "/deals" },
+      { label: t("footer.downloads"), href: "/resources" },
+    ],
+    support: [
+      { label: t("footer.community"), href: "/community" },
+      { label: t("footer.pricing"), href: "/pricing" },
+      { label: t("footer.faq"), href: "/contact" },
+      { label: t("footer.support247"), href: "/contact" },
+    ],
+  };
+
+  const categoryLabels: Record<string, string> = {
+    company: t("footer.company"),
+    products: t("footer.products"),
+    resources: t("footer.resources"),
+    support: t("footer.support"),
+  };
+
+  const socialLinks = [
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Youtube, href: "#", label: "YouTube" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: MessageCircle, href: "#", label: "Discord" },
+  ];
+
   return (
     <footer className="relative bg-onyx border-t border-gold-400/20">
       {/* Gradient Overlay */}
@@ -51,9 +62,7 @@ export function Footer() {
           <div className="lg:col-span-4 space-y-6">
             <Logo3D size="lg" />
             <p className="text-gold-300/70 text-sm leading-relaxed max-w-sm">
-              Infinity Algo Ecosystem is the premier destination for elite traders. 
-              Master the markets with our cutting-edge AI tools, premium education, 
-              and exclusive trading community.
+              {t("footer.footerDesc")}
             </p>
 
             {/* External Links Buttons */}
@@ -64,8 +73,8 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="gold-button px-5 py-2.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
               >
-                Academy Portal
-                <ExternalLink className="w-4 h-4" />
+                {t("nav.academyPortal")}
+                <ExternalLink className="w-4 h-4 rtl-icon" />
               </a>
               <a
                 href="https://infinitysignals.net"
@@ -73,8 +82,8 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="gold-button px-5 py-2.5 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
               >
-                AI Signals
-                <ExternalLink className="w-4 h-4" />
+                {t("nav.signalsPortal")}
+                <ExternalLink className="w-4 h-4 rtl-icon" />
               </a>
             </div>
 
@@ -97,8 +106,8 @@ export function Footer() {
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             {Object.entries(footerLinks).map(([category, links]) => (
               <div key={category}>
-                <h4 className="text-gold-400 font-serif text-lg font-semibold capitalize mb-4">
-                  {category}
+                <h4 className="text-gold-400 font-serif text-lg font-semibold mb-4">
+                  {categoryLabels[category]}
                 </h4>
                 <ul className="space-y-2">
                   {links.map((link) => (
@@ -120,18 +129,22 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gold-400/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-gold-300/50 text-sm">
-              © {new Date().getFullYear()} Infinity Algo Ecosystem. All rights reserved.
+            <div className="flex items-center gap-4">
+              <div className="text-gold-300/50 text-sm">
+                © {new Date().getFullYear()} Infinity Algo Ecosystem. {t("footer.allRightsReserved")}
+              </div>
+              {/* Language Toggle in Footer */}
+              <LanguageToggle />
             </div>
             <div className="flex items-center gap-6 text-sm">
               <Link href="/contact" className="text-gold-300/50 hover:text-gold-400 transition-colors">
-                Privacy Policy
+                {t("footer.privacyPolicy")}
               </Link>
               <Link href="/contact" className="text-gold-300/50 hover:text-gold-400 transition-colors">
-                Terms of Service
+                {t("footer.termsOfService")}
               </Link>
               <Link href="/contact" className="text-gold-300/50 hover:text-gold-400 transition-colors">
-                Risk Disclaimer
+                {t("footer.riskDisclaimer")}
               </Link>
             </div>
           </div>
@@ -140,10 +153,7 @@ export function Footer() {
         {/* Risk Disclaimer */}
         <div className="mt-6 text-center">
           <p className="text-gold-300/30 text-xs max-w-3xl mx-auto">
-            Trading forex and derivatives carries a high level of risk and may not be suitable for all investors. 
-            Past performance is not indicative of future results. The information on this website is for educational 
-            purposes only and does not constitute financial advice. Always conduct your own research and seek 
-            professional advice before trading.
+            {t("footer.disclaimerText")}
           </p>
         </div>
       </div>

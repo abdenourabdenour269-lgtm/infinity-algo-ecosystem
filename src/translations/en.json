@@ -492,7 +492,10 @@
     "termsOfService": "Terms of Service",
     "riskDisclaimer": "Risk Disclaimer",
     "disclaimerText": "Trading forex and derivatives carries a high level of risk and may not be suitable for all investors. Past performance is not indicative of future results. The information on this website is for educational purposes only and does not constitute financial advice. Always conduct your own research and seek professional advice before trading.",
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "All rights reserved.",
+    "switchLanguage": "Switch Language",
+    "english": "English",
+    "arabic": "العربية"
   },
   "common": {
     "buy": "BUY",

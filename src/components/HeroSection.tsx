@@ -3,8 +3,9 @@
 import { Logo3D } from "./Logo3D";
 import { GoldParticles } from "./GoldParticles";
 import { GoldButton } from "./GoldButton";
+import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
-import { ArrowRight, TrendingUp, BarChart3, Brain } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 interface HeroSectionProps {
   title: string;
@@ -34,12 +35,17 @@ export function HeroSection({
   className = "",
   children,
 }: HeroSectionProps) {
+  const { direction } = useLanguage();
+  
   const heights = {
     sm: "min-h-[40vh]",
     md: "min-h-[60vh]",
     lg: "min-h-[85vh]",
     xl: "min-h-screen",
   };
+
+  // Use appropriate arrow based on direction
+  const ArrowIcon = direction === "rtl" ? ArrowLeft : ArrowRight;
 
   return (
     <section
@@ -91,7 +97,7 @@ export function HeroSection({
                 href={actions.primary.href}
                 external={actions.primary.external}
                 size="lg"
-                icon={<ArrowRight className="w-5 h-5" />}
+                icon={<ArrowIcon className="w-5 h-5 rtl-icon" />}
               >
                 {actions.primary.label}
               </GoldButton>
