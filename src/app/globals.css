@@ -443,3 +443,372 @@
     padding: 8rem 4rem;
   }
 }
+
+/* ========================================
+   RTL SUPPORT - Arabic Language Styles
+   ======================================== */
+
+/* RTL Base Styles */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] body {
+  font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: 'Tajawal', 'Playfair Display', serif;
+}
+
+/* RTL Logo Animation - Reverse Direction */
+[dir="rtl"] .logo-3d {
+  animation: logoSpinRTL 20s linear infinite;
+}
+
+[dir="rtl"] .logo-3d:hover {
+  animation: logoSpinFastRTL 5s linear infinite;
+}
+
+@keyframes logoSpinRTL {
+  0% { transform: rotateY(360deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+@keyframes logoSpinFastRTL {
+  0% { transform: rotateY(360deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+/* RTL Gold Button Shine Effect */
+[dir="rtl"] .gold-button::before {
+  left: auto;
+  right: -100%;
+}
+
+[dir="rtl"] .gold-button:hover::before {
+  left: auto;
+  right: 100%;
+}
+
+/* RTL Margins and Paddings */
+[dir="rtl"] .ml-1 { margin-left: 0; margin-right: 0.25rem; }
+[dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+[dir="rtl"] .ml-3 { margin-left: 0; margin-right: 0.75rem; }
+[dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
+[dir="rtl"] .ml-6 { margin-left: 0; margin-right: 1.5rem; }
+[dir="rtl"] .ml-8 { margin-left: 0; margin-right: 2rem; }
+[dir="rtl"] .ml-12 { margin-left: 0; margin-right: 3rem; }
+
+[dir="rtl"] .mr-1 { margin-right: 0; margin-left: 0.25rem; }
+[dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+[dir="rtl"] .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+[dir="rtl"] .mr-4 { margin-right: 0; margin-left: 1rem; }
+
+[dir="rtl"] .pl-4 { padding-left: 0; padding-right: 1rem; }
+[dir="rtl"] .pl-6 { padding-left: 0; padding-right: 1.5rem; }
+[dir="rtl"] .pl-8 { padding-left: 0; padding-right: 2rem; }
+[dir="rtl"] .pl-12 { padding-left: 0; padding-right: 3rem; }
+
+[dir="rtl"] .pr-4 { padding-right: 0; padding-left: 1rem; }
+[dir="rtl"] .pr-6 { padding-right: 0; padding-left: 1.5rem; }
+[dir="rtl"] .pr-8 { padding-right: 0; padding-left: 2rem; }
+[dir="rtl"] .pr-12 { padding-right: 0; padding-left: 3rem; }
+
+/* RTL Text Alignment */
+[dir="rtl"] .text-left { text-align: right; }
+[dir="rtl"] .text-right { text-align: left; }
+
+/* RTL Flexbox */
+[dir="rtl"] .flex-row { flex-direction: row-reverse; }
+[dir="rtl"] .flex-row-reverse { flex-direction: row; }
+
+/* RTL Positioning */
+[dir="rtl"] .left-0 { left: auto; right: 0; }
+[dir="rtl"] .right-0 { right: auto; left: 0; }
+[dir="rtl"] .left-4 { left: auto; right: 1rem; }
+[dir="rtl"] .right-4 { right: auto; left: 1rem; }
+[dir="rtl"] .left-6 { left: auto; right: 1.5rem; }
+[dir="rtl"] .right-6 { right: auto; left: 1.5rem; }
+
+/* RTL Borders */
+[dir="rtl"] .border-l { border-left: 0; border-right: 1px; }
+[dir="rtl"] .border-r { border-right: 0; border-left: 1px; }
+[dir="rtl"] .border-l-2 { border-left: 0; border-right: 2px; }
+[dir="rtl"] .border-r-2 { border-right: 0; border-left: 2px; }
+
+/* RTL Rounded Corners */
+[dir="rtl"] .rounded-l-lg { border-radius: 0 0.5rem 0.5rem 0; }
+[dir="rtl"] .rounded-r-lg { border-radius: 0.5rem 0 0 0.5rem; }
+[dir="rtl"] .rounded-l-full { border-radius: 0 9999px 9999px 0; }
+[dir="rtl"] .rounded-r-full { border-radius: 9999px 0 0 9999px; }
+[dir="rtl"] .rounded-bl-lg { border-radius: 0 0 0.5rem 0; }
+[dir="rtl"] .rounded-br-lg { border-radius: 0 0 0 0.5rem; }
+[dir="rtl"] .rounded-tl-lg { border-radius: 0 0.5rem 0 0; }
+[dir="rtl"] .rounded-tr-lg { border-radius: 0.5rem 0 0 0; }
+
+/* RTL Rotate */
+[dir="rtl"] .rotate-180 { transform: rotate(-180deg); }
+[dir="rtl"] .-rotate-180 { transform: rotate(180deg); }
+
+/* RTL Space Between */
+[dir="rtl"] .space-x-1 > * + * { margin-left: 0; margin-right: 0.25rem; }
+[dir="rtl"] .space-x-2 > * + * { margin-left: 0; margin-right: 0.5rem; }
+[dir="rtl"] .space-x-3 > * + * { margin-left: 0; margin-right: 0.75rem; }
+[dir="rtl"] .space-x-4 > * + * { margin-left: 0; margin-right: 1rem; }
+[dir="rtl"] .space-x-6 > * + * { margin-left: 0; margin-right: 1.5rem; }
+[dir="rtl"] .space-x-8 > * + * { margin-left: 0; margin-right: 2rem; }
+
+/* RTL Gap Fix for Flex */
+[dir="rtl"] .gap-1 { gap: 0.25rem; }
+[dir="rtl"] .gap-2 { gap: 0.5rem; }
+[dir="rtl"] .gap-3 { gap: 0.75rem; }
+[dir="rtl"] .gap-4 { gap: 1rem; }
+[dir="rtl"] .gap-6 { gap: 1.5rem; }
+[dir="rtl"] .gap-8 { gap: 2rem; }
+
+/* RTL Icon Flipping */
+[dir="rtl"] .icon-arrow { transform: scaleX(-1); }
+[dir="rtl"] .lucide-arrow-right { transform: scaleX(-1); }
+[dir="rtl"] .lucide-arrow-left { transform: scaleX(-1); }
+[dir="rtl"] .lucide-chevron-right { transform: scaleX(-1); }
+[dir="rtl"] .lucide-chevron-left { transform: scaleX(-1); }
+[dir="rtl"] .lucide-external-link { transform: scaleX(-1); }
+
+/* RTL Scrollbar */
+[dir="rtl"]::-webkit-scrollbar {
+  direction: ltr;
+}
+
+/* RTL Table */
+[dir="rtl"] table {
+  direction: rtl;
+}
+
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+/* RTL Gradient Backgrounds */
+[dir="rtl"] .bg-gradient-to-r {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
+}
+
+[dir="rtl"] .bg-gradient-to-l {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+/* RTL Navigation Menu */
+[dir="rtl"] nav ul {
+  padding-right: 0;
+}
+
+/* RTL Dropdown */
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+/* RTL Timeline */
+[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 50%;
+}
+
+[dir="rtl"] .timeline-item {
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+/* RTL Form Elements */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+[dir="rtl"] input[type="checkbox"],
+[dir="rtl"] input[type="radio"] {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* RTL Gold Gradient Text Animation */
+[dir="rtl"] .gold-gradient-text {
+  animation: shimmerRTL 3s ease-in-out infinite;
+}
+
+@keyframes shimmerRTL {
+  0%, 100% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+}
+
+/* RTL Luxury Divider */
+[dir="rtl"] .luxury-divider {
+  background: linear-gradient(-90deg, transparent 0%, #D4AF37 50%, transparent 100%);
+}
+
+/* Arabic Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+/* Arabic Typography Enhancement */
+[dir="rtl"] .font-serif {
+  font-family: 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .font-display {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+}
+
+/* RTL Card Hover Effects */
+[dir="rtl"] .glass-card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* RTL Button Icon Positioning */
+[dir="rtl"] .gold-button svg {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* RTL List Styling */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] li {
+  text-align: right;
+}
+
+/* RTL Floating CTA Position */
+[dir="rtl"] .floating-cta {
+  right: auto;
+  left: 1.5rem;
+}
+
+/* RTL Mobile Menu */
+[dir="rtl"] .mobile-menu {
+  left: 0;
+  right: auto;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* RTL Particle Animation */
+[dir="rtl"] .gold-particle {
+  animation: particleFallRTL linear infinite;
+}
+
+@keyframes particleFallRTL {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(-720deg);
+    opacity: 0;
+  }
+}
+
+/* RTL Section Alignment Fix */
+[dir="rtl"] .section-padding {
+  direction: rtl;
+}
+
+/* RTL Stats Grid */
+[dir="rtl"] .stats-grid {
+  direction: rtl;
+}
+
+/* RTL CTA Section */
+[dir="rtl"] .cta-section {
+  text-align: center;
+}
+
+/* RTL Feature Cards */
+[dir="rtl"] .feature-card {
+  text-align: right;
+}
+
+[dir="rtl"] .feature-card .icon {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* RTL Testimonial Cards */
+[dir="rtl"] .testimonial-card {
+  text-align: right;
+}
+
+/* RTL Pricing Cards */
+[dir="rtl"] .pricing-card {
+  text-align: right;
+}
+
+/* RTL Team Cards */
+[dir="rtl"] .team-card {
+  text-align: center;
+}
+
+/* RTL Form Labels */
+[dir="rtl"] label {
+  text-align: right;
+}
+
+/* RTL Breadcrumb */
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+/* RTL Pagination */
+[dir="rtl"] .pagination {
+  flex-direction: row-reverse;
+}
+
+/* RTL Notification Badge */
+[dir="rtl"] .notification-badge {
+  left: auto;
+  right: -0.25rem;
+}
+
+/* RTL Tooltip */
+[dir="rtl"] .tooltip {
+  text-align: right;
+}
+
+/* RTL Modal */
+[dir="rtl"] .modal-content {
+  text-align: right;
+}
+
+/* RTL Search Input */
+[dir="rtl"] .search-input {
+  padding-left: 1rem;
+  padding-right: 2.5rem;
+}
+
+[dir="rtl"] .search-icon {
+  left: auto;
+  right: 0.75rem;
+}
+
+/* RTL Footer */
+[dir="rtl"] footer {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-links {
+  text-align: right;
+}
