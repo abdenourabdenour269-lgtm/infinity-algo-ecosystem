@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,24 +17,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "Infinity Algo Ecosystem | Elite Trading & Education Platform",
+  description: "Join the elite trading community with cutting-edge AI tools, premium education, MT4/MT5 indicators, expert advisors, and automated trading solutions. Master the markets with Infinity Algo.",
+  keywords: ["trading", "forex", "crypto", "AI trading", "expert advisors", "MT4", "MT5", "trading education", "algorithmic trading", "Infinity Algo"],
+  authors: [{ name: "Infinity Algo Team" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Infinity Algo Ecosystem",
+    description: "Elite Trading & Education Platform - Master the markets with AI-powered tools",
+    url: "https://infinityalgo.com",
+    siteName: "Infinity Algo Ecosystem",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Infinity Algo Ecosystem",
+    description: "Elite Trading & Education Platform - Master the markets with AI-powered tools",
   },
 };
 
@@ -43,9 +46,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-onyx text-gold-50`}
       >
-        {children}
+        <Navigation />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
+        <FloatingCTA />
         <Toaster />
       </body>
     </html>
